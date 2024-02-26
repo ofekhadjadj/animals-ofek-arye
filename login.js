@@ -62,3 +62,5 @@ for (let i = 0; i < cardDiv.children.length; i++) {
     }
   });
 }
+
+// הלכתי להכין קפה

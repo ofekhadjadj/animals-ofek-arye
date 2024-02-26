@@ -227,3 +227,44 @@ dialog#modal-logout {
   z-index: 100; /* ודא שה-popup מופיע מעל כל האלמנטים האחרים */
   display: none;
 }
+
+/* zoo page */
+
+header {
+  background-color: black;
+  width: 100%;
+  height: 80px;
+}
+.zoo-container {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.zoo-container h1 {
+  font-size: 55px;
+  padding-bottom: 10px;
+}
+
+.filter-form,
+.filter-form input,
+.filter-form #color-search {
+  font-size: 22px;
+}
+
+#animal-cards {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#animal-cards .card {
+  height: unset;
+}
+
+#animal-cards .card h2 {
+  padding: 5px;
+}
