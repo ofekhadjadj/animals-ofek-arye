@@ -126,7 +126,7 @@ let animals = [
   {
     name: "Kangaroo",
     isPredator: false,
-    weight: 100,
+    weight: 120,
     height: 120,
     color: "brown",
     habitat: "land",

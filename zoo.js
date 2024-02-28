@@ -16,27 +16,52 @@ if (JSON.parse(localStorage.getItem("filterd array"))) {
 
 // colorSearch.addEventListener("change", () => console.log(colorSearch.value));
 
-searchAnimalName.addEventListener("input", arryFilteringName); //האזנה לאירוע שינוי באינפוט
-function arryFilteringName(e) {
-  //פונקצייה שמופעלת על ידי האיוונט ליסטינר
-  // cardDiv.innerHTML = ``; //איפוס הדיב של המבקרים
-  let newArry = animalsArry.filter(function (animal) {
-    // יצירת מערך חדש שיכיל את המערך המסונן
-    return animal.name.toLowerCase().includes(e.target.value.toLowerCase()); //בדיקת הכלה של האותיות שהוזנו והמרה לאותיות קטנות
-  });
+// function arryFilteringName(e) {
+//   //פונקצייה שמופעלת על ידי האיוונט ליסטינר
+//   // cardDiv.innerHTML = ``; //איפוס הדיב של המבקרים
+//   let newArry = animalsArry.filter(function (animal) {
+//     // יצירת מערך חדש שיכיל את המערך המסונן
+//     return animal.name.toLowerCase().includes(e.target.value.toLowerCase()); //בדיקת הכלה של האותיות שהוזנו והמרה לאותיות קטנות
+//   });
+//   localStorage.setItem("filterd array", JSON.stringify(newArry));
+//   // loadVisitors(newArry); //רנדור מערך מסונן
+// }
+
+//האזנה לאירוע שינוי באינפוט
+// function arryFilteringWeight(e) {
+//   //פונקצייה שמופעלת על ידי האיוונט ליסטינר
+//   // cardDiv.innerHTML = ``; //איפוס הדיב של המבקרים
+//   let newArry = animalsArry.filter(function (animal) {
+//     // יצירת מערך חדש שיכיל את המערך המסונן
+//     return animal.weight > e.target.value;
+//   });
+//   localStorage.setItem("filterd array", JSON.stringify(newArry));
+//   // loadVisitors(newArry); //רנדור מערך מסונן
+// }
+
+//בדיקה של פונקציה
+searchAnimalName.addEventListener("input", filterTest);
+searchAnimalWeight.addEventListener("input", filterTest);
+let newArry;
+
+function filterTest(e) {
+  newArry = animalsArry;
+  if (searchAnimalName.value) {
+    newArry = newArry.filter(function (animal) {
+      return animal.name
+        .toLowerCase()
+        .includes(searchAnimalName.value.toLowerCase());
+    });
+    console.table(newArry);
+  }
+  if (searchAnimalWeight.value) {
+    console.log(searchAnimalWeight.value);
+    newArry = newArry.filter(function (animal) {
+      return animal.weight > searchAnimalWeight.value;
+    });
+    console.table(newArry);
+  }
   localStorage.setItem("filterd array", JSON.stringify(newArry));
-  // loadVisitors(newArry); //רנדור מערך מסונן
-}
-searchAnimalWeight.addEventListener("input", arryFilteringWeight); //האזנה לאירוע שינוי באינפוט
-function arryFilteringWeight(e) {
-  //פונקצייה שמופעלת על ידי האיוונט ליסטינר
-  // cardDiv.innerHTML = ``; //איפוס הדיב של המבקרים
-  let newArry = animalsArry.filter(function (animal) {
-    // יצירת מערך חדש שיכיל את המערך המסונן
-    return animal.weight > e.target.value;
-  });
-  localStorage.setItem("filterd array", JSON.stringify(newArry));
-  // loadVisitors(newArry); //רנדור מערך מסונן
 }
 
 function renderAvailableAnimals() {
