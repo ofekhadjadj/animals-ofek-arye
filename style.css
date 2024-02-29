@@ -190,6 +190,19 @@ section.form-continer {
   border-radius: 8px;
   box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
   overflow: hidden;
+  animation-name: cardanimation;
+  animation-duration: 0.8s;
+}
+
+@keyframes cardanimation {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .card img {

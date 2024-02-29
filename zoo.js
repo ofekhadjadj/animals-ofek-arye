@@ -42,17 +42,15 @@ if (JSON.parse(localStorage.getItem("filterd array"))) {
 //בדיקה של פונקציה
 searchAnimalName.addEventListener("input", filterTest);
 searchAnimalWeight.addEventListener("input", filterTest);
-let newArry;
 
 function filterTest(e) {
-  newArry = animalsArry;
+  let newArry = animalsArry;
   if (searchAnimalName.value) {
     newArry = newArry.filter(function (animal) {
       return animal.name
         .toLowerCase()
         .includes(searchAnimalName.value.toLowerCase());
     });
-    console.table(newArry);
   }
   if (searchAnimalWeight.value) {
     console.log(searchAnimalWeight.value);
