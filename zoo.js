@@ -31,6 +31,8 @@ if (JSON.parse(localStorage.getItem("filterd array"))) {
 }
 
 renderAvailableAnimals(); //מקים בדף את כרטיסי כל החיות
+runOnCards();
+
 //תפיסת כל הכרטיסים הקיימים למערך 1
 // האזנות לאירועים בפורם
 searchAnimalName.addEventListener("input", filtering);
@@ -92,6 +94,7 @@ function filtering(e) {
 
   localStorage.setItem("filterd array", JSON.stringify(newArry)); //שמירת המערך המסונן בלוקל סטורג
   renderAvailableAnimals(); //הצגת הכרטיסים של החיות בדף
+  runOnCards();
 }
 
 //פונקציה שמאפסת את המסננים בטופס
@@ -165,4 +168,3 @@ function runOnCards() {
     });
   }
 }
-runOnCards();
