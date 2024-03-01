@@ -243,11 +243,6 @@ dialog#modal-logout {
 
 /* zoo page */
 
-header {
-  background-color: black;
-  width: 100%;
-  height: 80px;
-}
 .zoo-container {
   margin: 15px auto;
   text-align: center;
@@ -280,4 +275,46 @@ header {
 
 #animal-cards .card h2 {
   padding: 5px;
+}
+
+/* header & navbar */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  position: sticky;
+  top: 0;
+  animation-name: headerAnimtion;
+  animation-duration: 1.2s;
+}
+
+@keyframes headerAnimtion {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+header div.header-titles {
+  display: flex;
+  gap: 40px;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: black;
+  margin: 5px;
+  color: white;
 }

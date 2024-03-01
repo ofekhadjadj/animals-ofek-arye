@@ -165,6 +165,7 @@ function runOnCards() {
     card.addEventListener("click", (e) => {
       pickedAnimal = e.target.closest(".card").id;
       localStorage.setItem("pickedAnimal", JSON.stringify(pickedAnimal));
+      window.location.href = "/animal.html";
     });
   }
 }
