@@ -111,6 +111,7 @@ function clearForm() {
 
   localStorage.setItem("filterd array", JSON.stringify(animals)); //שמירת המערך המקורי במקום המערך במסונן בלוקל סטורג
   renderAvailableAnimals(); //הצגת הכרטיסים של החיות בדף
+  runOnCards();
 }
 
 //פונקית לשמירת הערכים מהטופס באובייקט המסננים

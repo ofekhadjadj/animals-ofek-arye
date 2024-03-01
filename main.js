@@ -181,23 +181,68 @@ function logout() {
   // שימו לב לנקות את השדה המתאים בלוקל סטורג'
 }
 //logic to header show
-ocument.addEventListener("DOMContentLoaded", checkIfHeaderShow);
-if (
-  window.location.pathname === "/zoo.html" ||
-  window.location.pathname === "/animal.html" ||
-  window.location.pathname === "/dashboard.html"
-) {
-  checkIfHeaderShow(); //נבדוק אם קיים למנוע כפילות
-  console.log("show header"); // אם קיים לא נעשה כלום ואם לא קיים נוסיף
-} else {
-  checkIfHeaderShow(); //נבדוק אם קיים למנוע כפיליות
-  console.log("dont show header"); //אם קיים נמחק אותו מהדף ואם לא קיים לא נעשה דברב
-}
+document.addEventListener("DOMContentLoaded", checkIfHeaderShow);
 
 function checkIfHeaderShow() {
   const element = document.querySelector("header");
-  console.log(element);
-  if (element) {
-    return true;
-  } else return false;
+  if (
+    window.location.pathname === "/zoo.html" ||
+    window.location.pathname === "/animal.html" ||
+    window.location.pathname === "/dashboard.html"
+  ) {
+    if (element === null) {
+      makeHeader();
+    }
+  } else {
+  }
+
+  let restBt = document.getElementById("header-rest-bt");
+
+  restBt.addEventListener("click", () => {
+    localStorage.removeItem("pickedAnimal");
+    localStorage.removeItem("form object");
+    localStorage.removeItem("filterd array");
+    localStorage.removeItem("logged user coins");
+    localStorage.removeItem("logged user name");
+    localStorage.setItem("visitors", JSON.stringify(visitors));
+    localStorage.setItem("animals", JSON.stringify(animals));
+    window.location.href = "/login.html";
+  });
+}
+
+function makeHeader() {
+  let body = document.querySelector("body");
+  let userName = localStorage.getItem("logged user name");
+  let userCoins = localStorage.getItem("logged user coins");
+  let visitorsFromStorage = JSON.parse(localStorage.getItem("visitors"));
+  let header = document.createElement("header");
+  body.insertBefore(header, body.firstChild);
+  header.innerHTML = `<div class="header-titles">
+  <h4 id="header-visitor">visitor:${userName}</h4>
+  <h4 id="header-coins">coins:${userCoins}</h4>
+</div>
+<select id="header-dropdown-visitors">
+  <option value="">Select visitor:</option>
+</select>
+<div class="headr-bts">
+  <button  id="header-dash-bt"><a href="./dashboard.html">My Dashboard</a></button>
+  <button id="header-rest-bt">Reset</button>
+</div>
+<nav>
+  <ul>
+    <li><a href="./zoo.html">Zoo</a></li>
+    <li><a href="./signup.html">Sign up</a></li>
+    <li><a href="./login.html">Log in</a></li>
+  </ul>
+</nav>`;
+  let dropdownHtml = document.getElementById("header-dropdown-visitors");
+
+  function loopForDropDown() {
+    for (visitor of visitorsFromStorage) {
+      dropdownHtml.innerHTML += `
+      <option value="${visitor.name}">${visitor.name}</option>
+      `;
+    }
+  }
+  loopForDropDown();
 }

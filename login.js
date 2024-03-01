@@ -5,6 +5,7 @@ const searchInput = document.getElementById("search-from"); //תפיסת אינ�
 if (localStorage.getItem("logged user name") != "null") {
 } else {
   localStorage.setItem("logged user name", JSON.stringify(null));
+  localStorage.setItem("logged user coins", JSON.stringify(null));
 }
 
 loadVisitors(visitorsArry); //רנדור למסך את המבקרים הקיימים
@@ -58,9 +59,12 @@ for (let i = 0; i < cardDiv.children.length; i++) {
         "logged user name",
         JSON.stringify(visitorsArry[findIdInString[1]].name) //הכנסת שם אורח נבחר לוגאין
       );
+      localStorage.setItem(
+        "logged user coins",
+        JSON.stringify(visitorsArry[findIdInString[1]].coins)
+      );
+
       window.location.href = "/zoo.html"; //מעבר לעמוד זוו
     }
   });
 }
-
-// הלכתי להכין קפה
