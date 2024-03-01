@@ -180,3 +180,24 @@ function logout() {
   //ממשו את הלוגיקה שמתנתקת מאורח מחובר
   // שימו לב לנקות את השדה המתאים בלוקל סטורג'
 }
+//logic to header show
+ocument.addEventListener("DOMContentLoaded", checkIfHeaderShow);
+if (
+  window.location.pathname === "/zoo.html" ||
+  window.location.pathname === "/animal.html" ||
+  window.location.pathname === "/dashboard.html"
+) {
+  checkIfHeaderShow(); //נבדוק אם קיים למנוע כפילות
+  console.log("show header"); // אם קיים לא נעשה כלום ואם לא קיים נוסיף
+} else {
+  checkIfHeaderShow(); //נבדוק אם קיים למנוע כפיליות
+  console.log("dont show header"); //אם קיים נמחק אותו מהדף ואם לא קיים לא נעשה דברב
+}
+
+function checkIfHeaderShow() {
+  const element = document.querySelector("header");
+  console.log(element);
+  if (element) {
+    return true;
+  } else return false;
+}
