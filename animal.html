@@ -9,21 +9,31 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <div>
-      <div id="image">
-        <!-- show here the animal image -->
-      </div>
-      <div>
-        <h1 id="name"></h1>
-        <p id="weight"></p>
-        <p id="height"></p>
-        <p id="color"></p>
-        <p id="habitat"></p>
-        <p id="isPredator"></p>
-        <button id="feed-animal">Feed me</button>
+    <div class="animal-continer">
+      <div class="animal">
+        <div id="image">
+          <!-- show here the animal image -->
+        </div>
+        <div class="animal-details">
+          <h1 id="name"></h1>
+          <p id="weight"></p>
+          <p id="height"></p>
+          <p id="color"></p>
+          <p id="habitat"></p>
+          <p id="isPredator"></p>
+          <button id="feed-animal">Feed me</button>
+        </div>
       </div>
     </div>
+    <h2 class="related-title">Related animals</h2>
     <div id="related-animals"></div>
+    <dialog open id="ispredator-alert">
+      <p id="modal-text"></p>
+      <button>
+        <a id="ispredator-alert-bt" href="#">OK</a>
+      </button>
+    </dialog>
+
     <script src="./animal.js"></script>
   </body>
 </html>

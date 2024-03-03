@@ -318,3 +318,60 @@ header nav a {
   margin: 5px;
   color: white;
 }
+
+/* animal page */
+
+.animal-continer {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.animal-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image {
+  text-align: center;
+}
+#image img {
+  width: 100%;
+}
+
+#ispredator-alert {
+  position: absolute;
+  top: 40%;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+
+#related-animals {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#related-animals .card {
+  height: unset;
+}
+
+#related-animals .card h2 {
+  padding: 5px;
+}
+
+.related-title {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 25px;
+}

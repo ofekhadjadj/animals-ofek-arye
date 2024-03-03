@@ -2,86 +2,105 @@
 let visitors = [
   {
     name: "John Smith",
-    coins: 50,
+    coins: 1,
+    visited: [],
   },
   {
     name: "Emily Johnson",
     coins: 50,
+    visited: [],
   },
   {
     name: "Michael Williams",
     coins: 50,
+    visited: [],
   },
   {
     name: "Jessica Brown",
     coins: 50,
+    visited: [],
   },
   {
     name: "Christopher Jones",
     coins: 50,
+    visited: [],
   },
   {
     name: "Ashley Davis",
     coins: 50,
+    visited: [],
   },
   {
     name: "Matthew Miller",
     coins: 50,
+    visited: [],
   },
   {
     name: "Amanda Wilson",
     coins: 50,
+    visited: [],
   },
   {
     name: "David Moore",
     coins: 50,
+    visited: [],
   },
   {
     name: "Sarah Taylor",
     coins: 50,
+    visited: [],
   },
   {
     name: "James Anderson",
     coins: 50,
+    visited: [],
   },
   {
     name: "Jennifer Thomas",
     coins: 50,
+    visited: [],
   },
   {
     name: "Robert Jackson",
     coins: 50,
+    visited: [],
   },
   {
     name: "Elizabeth White",
     coins: 50,
+    visited: [],
   },
   {
     name: "Daniel Harris",
     coins: 50,
+    visited: [],
   },
   {
     name: "Melissa Martin",
     coins: 50,
+    visited: [],
   },
   {
     name: "William Thompson",
     coins: 50,
+    visited: [],
   },
   {
     name: "Linda Garcia",
     coins: 50,
+    visited: [],
   },
   {
     name: "Joseph Martinez",
     coins: 50,
+    visited: [],
   },
   {
     name: "Karen Robinson",
     coins: 50,
+    visited: [],
   },
 ];
-
 let animals = [
   {
     name: "Lion",
@@ -155,6 +174,46 @@ let animals = [
     color: "yellow",
     habitat: "land",
   },
+  {
+    name: "Dolphin",
+    isPredator: false,
+    weight: 150,
+    height: 200,
+    color: "grey",
+    habitat: "sea",
+  },
+  {
+    name: "Shark",
+    isPredator: true,
+    weight: 1000,
+    height: 300,
+    color: "grey",
+    habitat: "sea",
+  },
+  {
+    name: "Octopus",
+    isPredator: true,
+    weight: 10,
+    height: 50,
+    color: "purple",
+    habitat: "sea",
+  },
+  {
+    name: "Sea Turtle",
+    isPredator: false,
+    weight: 500,
+    height: 100,
+    color: "green",
+    habitat: "sea",
+  },
+  {
+    name: "Jellyfish",
+    isPredator: false,
+    weight: 5,
+    height: 30,
+    color: "purple",
+    habitat: "sea",
+  },
 ];
 
 // פונקציה זו טוענת עבורכם את המידע ההתחלתי של האפליקציה, במידה וקיים מידע בלוקל סטורג׳, היא תקח אותו משם
@@ -216,6 +275,7 @@ function makeHeader() {
   let userCoins = localStorage.getItem("logged user coins");
   let visitorsFromStorage = JSON.parse(localStorage.getItem("visitors"));
   let header = document.createElement("header");
+  header.setAttribute("id", "header-id");
   body.insertBefore(header, body.firstChild);
   header.innerHTML = `<div class="header-titles">
   <h4 id="header-visitor">visitor:${userName}</h4>

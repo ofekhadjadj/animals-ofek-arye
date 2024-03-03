@@ -1,3 +1,7 @@
 1.in page login fix the macth with index to more spespic way
 2.in page login to do more elegant loop with for of and closet in the event listiner
 3.when we do clear or just regular sginup and pick user its says if you want to disconnecy but we dont connect
+4.check if rest bt does rest to original animal arry on local storage
+5.filter page to save the input from last filtering
+6.error console from the header main.js file if i in non header page
+7.after animal eskeped zoo page shwos filterd array and not the original array

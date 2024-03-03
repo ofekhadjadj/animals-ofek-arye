@@ -154,10 +154,6 @@ function renderAvailableAnimals() {
     `;
   });
 }
-function visitAnimal(animalName) {
-  // ממשו את הלוגיקה של מעבר לעמוד חיה עבור החיה הספציפית שנבחרה
-  // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
-}
 
 function runOnCards() {
   let cardArr = document.querySelectorAll(".card");
