@@ -4,101 +4,121 @@ let visitors = [
     name: "John Smith",
     coins: 1,
     visited: [],
+    feeded: [],
   },
   {
     name: "Emily Johnson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Michael Williams",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Jessica Brown",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Christopher Jones",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Ashley Davis",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Matthew Miller",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Amanda Wilson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "David Moore",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Sarah Taylor",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "James Anderson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Jennifer Thomas",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Robert Jackson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Elizabeth White",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Daniel Harris",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Melissa Martin",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "William Thompson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Linda Garcia",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Joseph Martinez",
     coins: 50,
     visited: [],
+    feeded: [],
   },
   {
     name: "Karen Robinson",
     coins: 50,
     visited: [],
+    feeded: [],
   },
 ];
 let animals = [
@@ -199,7 +219,7 @@ let animals = [
     habitat: "sea",
   },
   {
-    name: "Sea Turtle",
+    name: "Sea-Turtle",
     isPredator: false,
     weight: 500,
     height: 100,
@@ -254,7 +274,7 @@ function checkIfHeaderShow() {
     }
   } else {
   }
-
+  /*
   let restBt = document.getElementById("header-rest-bt");
 
   restBt.addEventListener("click", () => {
@@ -262,11 +282,12 @@ function checkIfHeaderShow() {
     localStorage.removeItem("form object");
     localStorage.removeItem("filterd array");
     localStorage.removeItem("logged user coins");
-    localStorage.removeItem("logged user name");
+    //localStorage.removeItem("logged user name");
     localStorage.setItem("visitors", JSON.stringify(visitors));
     localStorage.setItem("animals", JSON.stringify(animals));
+    localStorage.setItem("logged user name", JSON.stringify(null));
     window.location.href = "/login.html";
-  });
+  });*/
 }
 
 function makeHeader() {
@@ -305,4 +326,18 @@ function makeHeader() {
     }
   }
   loopForDropDown();
+
+  let restBt = document.getElementById("header-rest-bt");
+
+  restBt.addEventListener("click", () => {
+    localStorage.removeItem("pickedAnimal");
+    localStorage.removeItem("form object");
+    localStorage.removeItem("filterd array");
+    localStorage.removeItem("logged user coins");
+    //localStorage.removeItem("logged user name");
+    localStorage.setItem("visitors", JSON.stringify(visitors));
+    localStorage.setItem("animals", JSON.stringify(animals));
+    localStorage.setItem("logged user name", JSON.stringify(null));
+    window.location.href = "/login.html";
+  });
 }

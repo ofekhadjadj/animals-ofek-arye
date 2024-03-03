@@ -1,6 +1,7 @@
 let animalsArry = JSON.parse(localStorage.getItem("animals")); // תפיסת מערך חיות מלוקל סטורג
 //תפיסת אלמנטים
 let animalCard = document.getElementById("animal-cards");
+let visitorsArry = JSON.parse(localStorage.getItem("visitors")); // תפיסת מערך מבקרים מלוקל סטורג
 
 const searchAnimalName = document.getElementById("name-search");
 const searchAnimalWeight = document.getElementById("weight-search");
@@ -11,8 +12,9 @@ const habitatSearchSea = document.getElementById("sea-search");
 const pradatorSearchTrue = document.getElementById("is-pradator");
 const pradatorSearchFalse = document.getElementById("not-pradator");
 const clearBt = document.getElementById("clear-bt");
+const currentVisitor = JSON.parse(localStorage.getItem("logged user name"));
 
-//אוביקט של פורם לצורך שמירה בלוקל סטורג ואיפוס
+//הקמת אוביקט של פורם לצורך שמירה בלוקל סטורג ואיפוס
 let formObj = {
   nameForm: "",
   WeightForm: "",
@@ -44,7 +46,7 @@ habitatSearchSea.addEventListener("input", filtering);
 pradatorSearchTrue.addEventListener("input", filtering);
 pradatorSearchFalse.addEventListener("input", filtering);
 clearBt.addEventListener("click", clearForm);
-
+getFormObj();
 //פונקציה שמשנה את המערך בלוקל סטורג לפי המסננים
 function filtering(e) {
   let newArry = animalsArry;
@@ -147,7 +149,7 @@ function renderAvailableAnimals() {
   filteredarr.forEach((animal) => {
     animalCard.innerHTML += `
     <div id=${animal.name} class="card">
-          <img src="./images/lion-place-holder.webp" alt="profile img" />
+          <img src="./images/${animal.name}.jpg" alt="profile img" />
           <h2>${animal.name}</h2>
         </div>
     
@@ -155,14 +157,42 @@ function renderAvailableAnimals() {
   });
 }
 
+function getFormObj() {
+  let formObj = JSON.parse(localStorage.getItem("form object"));
+  searchAnimalName.value = formObj.nameForm;
+  searchAnimalWeight.value = formObj.WeightForm;
+  searchAnimalHeight.value = formObj.HeightForm;
+  colorSearch.value = formObj.colorForm;
+  habitatSearchLand.checked = formObj.habitatLandForm;
+  habitatSearchSea.checked = formObj.habitatSeaForm;
+  pradatorSearchFalse.checked = formObj.pradatorFalseForm;
+  pradatorSearchTrue.checked = formObj.pradatorTrueForm;
+}
+
 function runOnCards() {
   let cardArr = document.querySelectorAll(".card");
   let pickedAnimal;
+
   for (const card of cardArr) {
     card.addEventListener("click", (e) => {
       pickedAnimal = e.target.closest(".card").id;
       localStorage.setItem("pickedAnimal", JSON.stringify(pickedAnimal));
+
+      visitorsArry[getCurrentVisitorIndex()].visited.push(pickedAnimal);
+      localStorage.setItem("visitors", JSON.stringify(visitorsArry));
+
       window.location.href = "/animal.html";
     });
   }
+}
+
+function getCurrentVisitorIndex() {
+  let currentVisitorIndex;
+  visitorsArry.forEach((element, index) => {
+    if (element.name === currentVisitor) {
+      currentVisitorIndex = index;
+      return index;
+    }
+  });
+  return currentVisitorIndex;
 }

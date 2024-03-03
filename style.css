@@ -207,6 +207,8 @@ section.form-continer {
 
 .card img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .card h2 {
@@ -374,4 +376,78 @@ header nav a {
   text-align: center;
   font-size: 40px;
   padding-top: 25px;
+}
+
+/* dashboard page */
+
+.visited-feeded-animals {
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.visited-feeded-title {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.card-dash {
+  width: 110px;
+  height: 124px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  animation-name: cardanimation;
+  animation-duration: 0.8s;
+}
+
+.card-dash img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+#visited-animals,
+#feeded-animals {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+/* #feeded-animals {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
+  padding: 40px;
+  border-radius: 15px;
+} */
+
+.center {
+  text-align: center;
+}
+
+#favorite-animal {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
+  padding: 40px;
+  border-radius: 15px;
+}
+.center1 {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.favorite-title {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 15px;
+  padding-bottom: 15px;
 }

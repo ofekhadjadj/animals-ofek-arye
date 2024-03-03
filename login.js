@@ -27,9 +27,9 @@ function loadVisitors(visitorsArry) {
     //לולאה שרצה על המערך
     cardDiv.innerHTML += ` 
     <div class="card" id="card-${index}">
-    <img src="./images/prof-avatar.jpg" alt="profile img" />
+    <img src="./images/${visitor.name}.jpg" alt="profile img" />
     <h2>${visitor.name}</h2>
-    <h3>${visitor.coins}</h3>
+    <h3>Coins: ${visitor.coins}</h3>
   </div>`;
   }); //תבנית של הקארדים
 }

@@ -18,7 +18,7 @@ let relatedAnimals = document.getElementById("related-animals");
 feedbtPage.addEventListener("click", feedAnimal);
 function renderAnimal() {
   let animal = animalsArry[getCurrentAnimalIndex()];
-  imagePage.innerHTML = `<img src="./images/lion-place-holder.webp" alt="${animal.name}">`;
+  imagePage.innerHTML = `<img src="./images/${animal.name}.jpg" alt="${animal.name}">`;
   namePage.innerText = "Name: " + animal.name;
   weightPage.innerText = "Weight: " + animal.weight + "kg";
   heightPage.innerText = "Height: " + animal.height + "cm";
@@ -38,6 +38,7 @@ function getCurrentAnimalIndex() {
   return currentAnimalIndex;
 }
 function getCurrentVisitorIndex() {
+  let currentVisitorIndex;
   visitorsArry.forEach((element, index) => {
     if (element.name === currentVisitorName) {
       currentVisitorIndex = index;
@@ -76,7 +77,6 @@ function feedAnimal() {
         window.location.href = "/login.html";
       });
     } else {
-      //console.log("I am not pradator in else");
       animalArrAfterDelete = animalsArry.filter(
         (animal) => animal.name !== currentAnimal
       );
@@ -103,13 +103,6 @@ function feedAnimal() {
       ispredatorModalBt.addEventListener("click", () => {
         window.location.href = "/zoo.html";
       });
-
-      // document
-      //   .getElementById("ispredator-alert-bt")
-      //   .setAttribute("href", "./dashboard.html");
-      // document.getElementById("modal-text").innerText =
-      //   "Thank you very much for the feeding!";
-      // isPredatorModal.style.display = "block";
     }
   } else {
     document.getElementById("header-coins").innerText = `coins:${
@@ -120,11 +113,10 @@ function feedAnimal() {
       JSON.stringify(currentVisitorCoins - 2)
     );
     visitorsArry[getCurrentVisitorIndex()].coins = currentVisitorCoins - 2;
+
+    visitorsArry[getCurrentVisitorIndex()].feeded.push(currentAnimal);
     localStorage.setItem("visitors", JSON.stringify(visitorsArry));
-    //שהכפתור יסגור את המודל ולא נעבור לדף אחר
-    // document
-    //     .getElementById("ispredator-alert-bt")
-    //     .setAttribute("href", "./dashboard.html");
+
     document.getElementById("modal-text").innerText =
       "Thank you very much for the feeding!";
     isPredatorModal.style.display = "block";
@@ -138,13 +130,12 @@ function feedAnimal() {
 function renderRelatedAnimals() {
   let animalObj = animalsArry[getCurrentAnimalIndex()];
   let animalSameHabtitArr = animalsArry.filter((animal) => {
-    // console.log(animal.habitat);
     return animal.habitat == animalObj.habitat;
   });
   animalSameHabtitArr.forEach((animal) => {
     relatedAnimals.innerHTML += `
     <div id=${animal.name} class="card">
-          <img src="./images/lion-place-holder.webp" alt="profile img" />
+          <img src="./images/${animal.name}.jpg" alt="profile img" />
           <h2>${animal.name}</h2>
         </div>
     

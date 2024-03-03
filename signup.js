@@ -1,3 +1,4 @@
+localStorage.setItem("logged user name", JSON.stringify(null));
 function createNewVisitor(event) {
   const userNameForm = document.getElementById("usernameform").value; //שמירה של הערך של שם המשתמש
   const coinsForm = parseInt(document.getElementById("user-coins-form").value); //שמירה של הערך של המטבעות
@@ -41,6 +42,8 @@ function makeVisitor(userNameForm, coinsForm) {
   let user = {
     name: userNameForm,
     coins: coinsForm,
+    visited: [],
+    feeded: [],
   };
   return user;
 }
