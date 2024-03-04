@@ -250,6 +250,12 @@ section.form-continer {
   animation-duration: 0.8s;
   background-color: white;
   cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  transition: ease-in-out 0.2s;
 }
 
 .cardn {
@@ -353,6 +359,10 @@ dialog#modal-logout {
   font-size: 22px;
   transition: ease-in-out 0.3s;
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+}
+#clear-bt:hover {
+  background-color: white;
+  color: black;
 }
 
 .filter-form,
