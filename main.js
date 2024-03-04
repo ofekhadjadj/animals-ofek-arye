@@ -285,9 +285,9 @@ document.addEventListener("DOMContentLoaded", checkIfHeaderShow);
 function checkIfHeaderShow() {
   const element = document.querySelector("header");
   if (
-    window.location.pathname === "/zoo.html" ||
-    window.location.pathname === "/animal.html" ||
-    window.location.pathname === "/dashboard.html"
+    window.location.pathname === "/animals-ofek-arye/zoo.html" ||
+    window.location.pathname === "/animals-ofek-arye/animal.html" ||
+    window.location.pathname === "/animals-ofek-arye/dashboard.html"
   ) {
     if (element === null) {
       makeHeader();
