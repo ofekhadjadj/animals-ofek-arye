@@ -15,7 +15,7 @@ function createNewVisitor(event) {
   }
   pushNewVisitor(makeVisitor(userNameForm, coinsForm), visitorsArry); //דחיפת משתמש חדש למערך המשתמשים כאובייקט
   uploadToLocalstorage(visitorsArry); //העלאה ללוקל סטורג
-  window.location.href = "./login.html"; // העברה לדף לוגאין
+  window.location.href = "/login.html"; // העברה לדף לוגאין
 }
 
 const createForm = document.getElementById("create-visitor-form");

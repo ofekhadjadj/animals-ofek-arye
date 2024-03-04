@@ -68,7 +68,7 @@ function runOnCards() {
           JSON.stringify(visitorsArry[findIdInString[1]].coins)
         );
 
-        window.location.href = "./zoo.html"; //מעבר לעמוד זוו
+        window.location.href = "/zoo.html"; //מעבר לעמוד זוו
       }
     });
   }
