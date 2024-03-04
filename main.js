@@ -285,9 +285,9 @@ document.addEventListener("DOMContentLoaded", checkIfHeaderShow);
 function checkIfHeaderShow() {
   const element = document.querySelector("header");
   if (
-    window.location.pathname === "/animals-ofek-arye/zoo.html" ||
-    window.location.pathname === "/animals-ofek-arye/animal.html" ||
-    window.location.pathname === "/animals-ofek-arye/dashboard.html"
+    window.location.pathname === "./zoo.html" ||
+    window.location.pathname === "./animal.html" ||
+    window.location.pathname === "./dashboard.html"
   ) {
     if (element === null) {
       makeHeader();
@@ -358,6 +358,6 @@ function makeHeader() {
     localStorage.setItem("visitors", JSON.stringify(originalVisitors));
     localStorage.setItem("animals", JSON.stringify(originalAnimals));
     localStorage.setItem("logged user name", JSON.stringify(null));
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
   });
 }
