@@ -236,6 +236,8 @@ let animals = [
   },
 ];
 
+let originalVisitors = visitors;
+let originalAnimals = animals;
 // פונקציה זו טוענת עבורכם את המידע ההתחלתי של האפליקציה, במידה וקיים מידע בלוקל סטורג׳, היא תקח אותו משם
 // אל תשנו את הקוד בפונקציה הזו כדי לשמור על תקינות הטמפלייט
 function generateDataset() {
@@ -249,8 +251,6 @@ function generateDataset() {
   } else {
     localStorage.setItem("animals", JSON.stringify(animals));
   }
-
-  // console.log(visitors);
 }
 generateDataset();
 
@@ -330,13 +330,14 @@ function makeHeader() {
   let restBt = document.getElementById("header-rest-bt");
 
   restBt.addEventListener("click", () => {
+    console.log(visitors);
     localStorage.removeItem("pickedAnimal");
     localStorage.removeItem("form object");
     localStorage.removeItem("filterd array");
     localStorage.removeItem("logged user coins");
     //localStorage.removeItem("logged user name");
-    localStorage.setItem("visitors", JSON.stringify(visitors));
-    localStorage.setItem("animals", JSON.stringify(animals));
+    localStorage.setItem("visitors", JSON.stringify(originalVisitors));
+    localStorage.setItem("animals", JSON.stringify(originalAnimals));
     localStorage.setItem("logged user name", JSON.stringify(null));
     window.location.href = "/login.html";
   });

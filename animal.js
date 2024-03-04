@@ -71,7 +71,7 @@ function feedAnimal() {
       isPredatorModal.style.display = "block";
       document.getElementById("header-id").style.display = "none";
       localStorage.setItem("visitors", JSON.stringify(visitorArrAfterDelete));
-      localStorage.setItem("logged user name", JSON.stringify(""));
+      localStorage.setItem("logged user name", JSON.stringify(null));
       localStorage.setItem("logged user coins", JSON.stringify(0));
       ispredatorModalBt.addEventListener("click", () => {
         window.location.href = "/login.html";
