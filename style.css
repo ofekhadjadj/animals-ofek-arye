@@ -1,4 +1,5 @@
 /* rests */
+
 html,
 body,
 div,
@@ -86,6 +87,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: Poppins;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -123,11 +125,23 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* bg */
+body {
+  background-image: url(./images/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+select {
+  font-family: poppins;
+}
 
 /* signupPage */
 .centering {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
@@ -138,7 +152,7 @@ table {
 }
 .centering h1 {
   padding-bottom: 15px;
-  font-size: 22px;
+  font-size: 40px;
   margin-top: -20px;
 }
 
@@ -157,19 +171,34 @@ section.form-continer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./images/signup-bg.jpg);
+  /* background-image: url(./images/signup-bg.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+#create-visitor-form {
+  width: 62%;
+}
+#create-visitor-form label {
+  font-size: 22px;
+  padding-top: 10px;
+}
+#create-visitor-form input {
+  font-size: 22px;
+}
 #register-bt-form {
   background-color: white;
   border: none;
   box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+  font-size: 21px;
+  margin-top: 15px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
 }
 
 #register-bt-form:hover {
-  background-color: gray;
+  background-color: black;
+  color: white;
+  transition: ease-in-out 0.3s;
 }
 
 /* LogInPage */
@@ -192,6 +221,34 @@ section.form-continer {
   overflow: hidden;
   animation-name: cardanimation;
   animation-duration: 0.8s;
+  background-color: white;
+  cursor: pointer;
+}
+
+.cardn {
+  width: 180px;
+  height: 204px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  animation-name: cardanimation;
+  animation-duration: 0.8s;
+  background-color: white;
+}
+.cardn img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cardn h2 {
+  font-size: 19px;
+}
+.cardn h3 {
+  margin-top: 6px;
+  font-size: 18px;
+  padding-bottom: 21px;
 }
 
 @keyframes cardanimation {
@@ -212,7 +269,7 @@ section.form-continer {
 }
 
 .card h2 {
-  font-size: 22px;
+  font-size: 19px;
 }
 .card h3 {
   margin-top: 6px;
@@ -252,7 +309,23 @@ dialog#modal-logout {
 
 .zoo-container h1 {
   font-size: 55px;
-  padding-bottom: 10px;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+.radio-habitat-search {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#clear-bt {
+  margin-top: 13px;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  font-size: 22px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
 }
 
 .filter-form,
@@ -315,21 +388,77 @@ header nav ul {
 
 header nav a {
   text-decoration: none;
-  padding: 7px 10px;
+  margin: 6px;
   background-color: black;
-  margin: 5px;
+  border: none;
   color: white;
+  padding: 5px 12px;
+  font-size: 18px;
+  margin-bottom: -6px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+}
+
+header nav a:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.3s;
+}
+
+.header-bold-title {
+  font-weight: 700;
+}
+
+#header-dash-bt {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 18px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  padding: 2px 12px;
+
+  margin-right: 4px;
+}
+#header-dash-bt a {
+  text-decoration: none;
+  /* padding: 0px 12px; */
+  color: white;
+}
+#header-rest-bt {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  font-size: 18px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+#header-rest-bt:hover,
+#header-dash-bt:hover,
+#header-dash-bt a:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.3s;
+}
+
+header select {
+  font-size: 17px;
 }
 
 /* animal page */
 
 .animal-continer {
-  width: 50%;
+  width: 520px;
   margin: 0 auto;
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
   border-radius: 15px;
   margin-top: 50px;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .animal-details {
@@ -339,11 +468,38 @@ header nav a {
   align-items: center;
 }
 
+.animal-details p {
+  font-size: 18px;
+  padding: 3px;
+}
+.animal-details h1 {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 7px;
+}
+.animal-details button {
+  margin: 6px;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: -6px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+}
+.animal-details button:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.3s;
+}
+
 #image {
   text-align: center;
 }
 #image img {
-  width: 100%;
+  max-width: 500px;
 }
 
 #ispredator-alert {
@@ -364,11 +520,11 @@ header nav a {
   padding: 20px;
 }
 
-#related-animals .card {
+#related-animals .cardn {
   height: unset;
 }
 
-#related-animals .card h2 {
+#related-animals .cardn h2 {
   padding: 5px;
 }
 
@@ -417,6 +573,7 @@ header nav a {
   box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
   padding: 40px;
   border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* #feeded-animals {
@@ -439,6 +596,7 @@ header nav a {
   box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
   padding: 40px;
   border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .center1 {
   width: 200px;

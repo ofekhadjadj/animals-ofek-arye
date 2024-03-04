@@ -5,120 +5,140 @@ let visitors = [
     coins: 1,
     visited: [],
     feeded: [],
+    image: "John Smith",
   },
   {
     name: "Emily Johnson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Emily Johnson",
   },
   {
     name: "Michael Williams",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Michael Williams",
   },
   {
     name: "Jessica Brown",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Jessica Brown",
   },
   {
     name: "Christopher Jones",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Christopher Jones",
   },
   {
     name: "Ashley Davis",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Ashley Davis",
   },
   {
     name: "Matthew Miller",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Matthew Miller",
   },
   {
     name: "Amanda Wilson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Amanda Wilson",
   },
   {
     name: "David Moore",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "David Moore",
   },
   {
     name: "Sarah Taylor",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Sarah Taylor",
   },
   {
     name: "James Anderson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "James Anderson",
   },
   {
     name: "Jennifer Thomas",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Jennifer Thomas",
   },
   {
     name: "Robert Jackson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Robert Jackson",
   },
   {
     name: "Elizabeth White",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Elizabeth White",
   },
   {
     name: "Daniel Harris",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Daniel Harris",
   },
   {
     name: "Melissa Martin",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Melissa Martin",
   },
   {
     name: "William Thompson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "William Thompson",
   },
   {
     name: "Linda Garcia",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Linda Garcia",
   },
   {
     name: "Joseph Martinez",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Joseph Martinez",
   },
   {
     name: "Karen Robinson",
     coins: 50,
     visited: [],
     feeded: [],
+    image: "Karen Robinson",
   },
 ];
 let animals = [
@@ -292,15 +312,15 @@ function checkIfHeaderShow() {
 
 function makeHeader() {
   let body = document.querySelector("body");
-  let userName = localStorage.getItem("logged user name");
+  let userName = JSON.parse(localStorage.getItem("logged user name"));
   let userCoins = localStorage.getItem("logged user coins");
   let visitorsFromStorage = JSON.parse(localStorage.getItem("visitors"));
   let header = document.createElement("header");
   header.setAttribute("id", "header-id");
   body.insertBefore(header, body.firstChild);
   header.innerHTML = `<div class="header-titles">
-  <h4 id="header-visitor">visitor:${userName}</h4>
-  <h4 id="header-coins">coins:${userCoins}</h4>
+  <h4 id="header-visitor"><span class="header-bold-title">visitor: </span>${userName}</h4>
+  <h4 id="header-coins"><span class="header-bold-title">coins:</span> ${userCoins}</h4>
 </div>
 <select id="header-dropdown-visitors">
   <option value="">Select visitor:</option>
@@ -335,7 +355,6 @@ function makeHeader() {
     localStorage.removeItem("form object");
     localStorage.removeItem("filterd array");
     localStorage.removeItem("logged user coins");
-    //localStorage.removeItem("logged user name");
     localStorage.setItem("visitors", JSON.stringify(originalVisitors));
     localStorage.setItem("animals", JSON.stringify(originalAnimals));
     localStorage.setItem("logged user name", JSON.stringify(null));

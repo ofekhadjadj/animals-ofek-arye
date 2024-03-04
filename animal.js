@@ -19,7 +19,7 @@ feedbtPage.addEventListener("click", feedAnimal);
 function renderAnimal() {
   let animal = animalsArry[getCurrentAnimalIndex()];
   imagePage.innerHTML = `<img src="./images/${animal.name}.jpg" alt="${animal.name}">`;
-  namePage.innerText = "Name: " + animal.name;
+  namePage.innerText = animal.name;
   weightPage.innerText = "Weight: " + animal.weight + "kg";
   heightPage.innerText = "Height: " + animal.height + "cm";
   colorPage.innerText = "Color: " + animal.color;
@@ -134,7 +134,7 @@ function renderRelatedAnimals() {
   });
   animalSameHabtitArr.forEach((animal) => {
     relatedAnimals.innerHTML += `
-    <div id=${animal.name} class="card">
+    <div id=${animal.name} class="cardn">
           <img src="./images/${animal.name}.jpg" alt="profile img" />
           <h2>${animal.name}</h2>
         </div>

@@ -44,12 +44,13 @@ function makeVisitor(userNameForm, coinsForm) {
     coins: coinsForm,
     visited: [],
     feeded: [],
+    image: "visitor",
   };
   return user;
 }
 
 function pushNewVisitor(user, visitorsArry) {
-  visitorsArry.push(user);
+  visitorsArry.unshift(user);
 }
 
 function uploadToLocalstorage(visitorsArry) {

@@ -27,7 +27,7 @@ function loadVisitors(visitorsArry) {
     //לולאה שרצה על המערך
     cardDiv.innerHTML += ` 
     <div class="card" id="card-${index}">
-    <img src="./images/${visitor.name}.jpg" alt="profile img" />
+    <img src="./images/${visitor.image}.jpg" alt="profile img" />
     <h2>${visitor.name}</h2>
     <h3>Coins: ${visitor.coins}</h3>
   </div>`;
@@ -59,6 +59,7 @@ for (let i = 0; i < cardDiv.children.length; i++) {
         "logged user name",
         JSON.stringify(visitorsArry[findIdInString[1]].name) //הכנסת שם אורח נבחר לוגאין
       );
+
       localStorage.setItem(
         "logged user coins",
         JSON.stringify(visitorsArry[findIdInString[1]].coins)
