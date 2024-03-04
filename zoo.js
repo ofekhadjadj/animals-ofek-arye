@@ -181,7 +181,7 @@ function runOnCards() {
       visitorsArry[getCurrentVisitorIndex()].visited.push(pickedAnimal);
       localStorage.setItem("visitors", JSON.stringify(visitorsArry));
 
-      window.location.href = "./animal.html";
+      window.location.href = "/animal.html";
     });
   }
 }
