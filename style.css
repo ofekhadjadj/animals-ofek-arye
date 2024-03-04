@@ -186,7 +186,8 @@ section.form-continer {
   font-size: 22px;
 }
 #register-bt-form {
-  background-color: white;
+  background-color: black;
+  color: white;
   border: none;
   box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
   font-size: 21px;
@@ -196,13 +197,39 @@ section.form-continer {
 }
 
 #register-bt-form:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transition: ease-in-out 0.3s;
 }
 
 /* LogInPage */
 
+#modal-logout {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.modalBtns {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+#modal-logout button {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 .cards {
   display: flex;
   gap: 15px;
@@ -450,7 +477,18 @@ header select {
 }
 
 /* animal page */
-
+#ispredator-alert {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.42);
+  border-radius: 15px;
+}
+#ispredator-alert a {
+  text-decoration: none;
+  /* margin-top: 5px; */
+}
+#ispredator-alert button {
+  margin-top: 10px;
+}
 .animal-continer {
   width: 520px;
   margin: 0 auto;
