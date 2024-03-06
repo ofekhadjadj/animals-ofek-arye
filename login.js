@@ -41,6 +41,14 @@ function runOnCards() {
     cardDiv.children[i].addEventListener("click", (e) => {
       const findIdInString = e.target.parentElement.id.split("-"); //פיצול האיי דיי הנלחץ למציאת האינדקס במערך המקורי
       if (localStorage.getItem("logged user name") != "null") {
+        if (
+          JSON.parse(localStorage.getItem("logged user name")) ==
+          visitorsArry[findIdInString[1]].name
+        ) {
+          window.location.href = "./zoo.html";
+          return;
+        }
+
         //בדיקה שכבר קיים אורח בלוקל
         document.getElementById("modal-logout").style.display = "block"; //הצגת חלון מודאל
         document
