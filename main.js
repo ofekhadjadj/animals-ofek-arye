@@ -362,6 +362,6 @@ function makeHeader() {
     localStorage.setItem("visitors", JSON.stringify(originalVisitors));
     localStorage.setItem("animals", JSON.stringify(originalAnimals));
     localStorage.setItem("logged user name", JSON.stringify(null));
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
   });
 }
