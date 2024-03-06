@@ -74,7 +74,7 @@ function feedAnimal() {
       localStorage.setItem("logged user name", JSON.stringify(null));
       localStorage.setItem("logged user coins", JSON.stringify(0));
       ispredatorModalBt.addEventListener("click", () => {
-        window.location.href = "/login.html";
+        window.location.href = "./login.html";
       });
     } else {
       animalArrAfterDelete = animalsArry.filter(
@@ -101,7 +101,7 @@ function feedAnimal() {
       document.getElementById("header-id").style.display = "none";
 
       ispredatorModalBt.addEventListener("click", () => {
-        window.location.href = "/zoo.html";
+        window.location.href = "./zoo.html";
       });
     }
   } else {
@@ -122,7 +122,7 @@ function feedAnimal() {
     isPredatorModal.style.display = "block";
     ispredatorModalBt.addEventListener("click", () => {
       isPredatorModal.style.display = "none";
-      window.location.href = "/animal.html";
+      window.location.href = "./animal.html";
     });
   }
 }
