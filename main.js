@@ -274,21 +274,11 @@ function generateDataset() {
 }
 generateDataset();
 
-//********************** */
-function logout() {
-  //ממשו את הלוגיקה שמתנתקת מאורח מחובר
-  // שימו לב לנקות את השדה המתאים בלוקל סטורג'
-}
-//logic to header show
 document.addEventListener("DOMContentLoaded", checkIfHeaderShow);
 
 function checkIfHeaderShow() {
   const element = document.querySelector("header");
   if (
-    // window.location.pathname === "/zoo.html" ||
-    // window.location.pathname === "/animal.html" ||
-    // window.location.pathname === "/dashboard.html"
-
     window.location.pathname.includes("zoo.html") ||
     window.location.pathname.includes("animal.html") ||
     window.location.pathname.includes("dashboard.html")
@@ -298,20 +288,6 @@ function checkIfHeaderShow() {
     }
   } else {
   }
-  /*
-  let restBt = document.getElementById("header-rest-bt");
-
-  restBt.addEventListener("click", () => {
-    localStorage.removeItem("pickedAnimal");
-    localStorage.removeItem("form object");
-    localStorage.removeItem("filterd array");
-    localStorage.removeItem("logged user coins");
-    //localStorage.removeItem("logged user name");
-    localStorage.setItem("visitors", JSON.stringify(visitors));
-    localStorage.setItem("animals", JSON.stringify(animals));
-    localStorage.setItem("logged user name", JSON.stringify(null));
-    window.location.href = "/login.html";
-  });*/
 }
 
 function makeHeader() {

@@ -46,7 +46,6 @@ function getCurrentVisitorIndex() {
   return currentVisitorIndex;
 }
 
-/*gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg */
 function highestFrequencyVisitAnimal() {
   let visitedAnimalArr = visitorsArry[getCurrentVisitorIndex()].visited;
   let index;
@@ -65,27 +64,4 @@ function highestFrequencyVisitAnimal() {
     }
   }
   return visitedAnimalArr[index];
-  //console.log(visitedAnimalArr[index]);
 }
-
-// let x = ['a','a','c','c','c'];
-// let index;
-// let count1= 0;
-// let count2 = 0;
-// for (let i = 0; i<x.length;i++){
-//   for(let j = 0; j<x.length;j++){
-//     if(x[i] === x[j]){
-//       count1++;
-
-//     }
-//   }
-//   if(count1>count2)
-//   {
-//     index = i;
-//     count2=count1;
-//     count1=0;
-//   }
-// }
-// console.log(x[index]);
-
-/*gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg */

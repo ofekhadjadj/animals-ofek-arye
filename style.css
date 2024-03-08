@@ -459,7 +459,6 @@ header nav a:hover {
 }
 #header-dash-bt a {
   text-decoration: none;
-  /* padding: 0px 12px; */
   color: white;
 }
 #header-rest-bt {
@@ -623,15 +622,6 @@ header select {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-/* #feeded-animals {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  box-shadow: 1px -1px 10px 3px rgba(0, 0, 0, 0.24);
-  padding: 40px;
-  border-radius: 15px;
-} */
 
 .center {
   text-align: center;

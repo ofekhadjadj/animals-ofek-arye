@@ -143,10 +143,3 @@ function renderRelatedAnimals() {
   });
 }
 renderRelatedAnimals();
-function visitorGotEaten() {
-  // ממשו את הלוגיקה של חיה שטורפת אורח
-}
-
-function animalEscaped() {
-  //ממשו את הלוגיקה של חיה שבורחת מגן החיות
-}
